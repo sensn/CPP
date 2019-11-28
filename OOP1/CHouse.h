@@ -5,25 +5,24 @@
 
 class House {
 private:
-    char* m_street;
-	std::string m_city;
+    char* m_street= nullptr;
+	std::string m_city="Supercity";
 	size_t m_width=27;
 	size_t m_height=27;
 
 public:
+	
 
 	//Constructor
 	House();
-	 //Overloaded Constructor
-	House(const char* t_street, std::string t_city, size_t t_width, size_t t_height);
-	House(std::string t_city, size_t t_width, size_t t_height);
-	//Parameterized 2
-	House(size_t t_height, size_t t_width);
+	//Overloaded-Parameterized Constructor
 	House(size_t t_height);
-	
+	House(size_t t_height, size_t t_width);
+	House(std::string t_city, size_t t_width, size_t t_height);
+	House(const char* t_street, std::string t_city, size_t t_width, size_t t_height);
 	//Destructor
 	~House();
-
+    //Getter-Setter 
 	char* GetStreet() { return this->m_street;}
 	std::string GetCity() { return this->m_city;}
 	size_t GetWidth() {return this->m_width;}
@@ -42,5 +41,7 @@ public:
 
 	//ü. Zuweisungsoperator
 	House& operator=(House& const original);
+
+	unsigned int id;  //for list of objects
 };
 

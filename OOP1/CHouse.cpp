@@ -17,7 +17,7 @@ House::House(const char* t_street, std::string t_city, size_t t_width, size_t t_
 	this->m_city = t_city;
 	this->m_width = t_width;
 	this->m_height = t_height;
-	std::cout << "K3\n";
+	std::cout << "K4\n";
 
 	/*(t_width > 0) ? this->m_width = t_width : 0;
 	(t_height > 0) ? this->m_height = t_width : 0;*/
@@ -67,6 +67,7 @@ void House::SetStreet(const char* t_street)
 	//Step1: Ist in m_Name schon etwas drin
 	if (this->m_street!= nullptr) {
 		delete[] this->m_street;
+		
 	}
 	size_t len;
 	//Step2: Hat der Parameter einen Inhalt
@@ -111,12 +112,12 @@ void House::SetHeight(size_t t_height)
 
 void House::Display()
 {
-	/*std::cout << "Street....:" << (this->m_street ? this->m_street : "Street noch nicht vorhanden!") << std::endl;
+	std::cout << "Street....:" << (this->m_street ? this->m_street : "Street noch nicht vorhanden!") << std::endl;
 	
 	std::cout << "City....:" << ((this->m_city!="")? this->m_city : "City noch nicht vorhanden!") << std::endl;
-	*/
+	
 
-	std::cout << "Width....:" << ((this->m_width >0)? this->m_width : 20) << std::endl;
-	std::cout << "Height....:" << ((this->m_height>0)? this->m_height : 30) << std::endl;
+	std::cout << "Width....:" << ((this->m_width >0)? this->m_width : 007) << std::endl;
+	std::cout << "Height....:" << ((this->m_height>0)? this->m_height : 007) << std::endl;
 
 }
