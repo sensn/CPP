@@ -6,9 +6,9 @@
 class House {
 private:
     char* m_street= nullptr;
-	std::string m_city="Supercity";
-	size_t m_width=27;
-	size_t m_height=27;
+	std::string m_city="Initcity";
+	size_t m_width=0;
+	size_t m_height=0;
 
 public:
 	

@@ -26,5 +26,8 @@
     <ClInclude Include="CHouse.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Input_Buffer_Events.hpp">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

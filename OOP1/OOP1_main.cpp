@@ -1,11 +1,19 @@
 #include <stdlib.h>
 #include "CHouse.h"
+#include "Input_Buffer_Events.hpp"
+//#include "windows.h"
 #include <iostream>
 #include <list>
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996)
-int test();
+
 int main() {
+	
+
+
+			input_Buffer_Events_main();
+	
+
 
 	//House *myHouse = new House();
 	//
@@ -34,19 +42,30 @@ int main() {
 	House* ourHouse = new House[5]  { {(1)},{3,4},{mys,127,255},{a,mys,127,255},{"Direct Street",mys,127,255} };
 	ourHouse++;
 	ourHouse++;
-	ourHouse->Display();
+	//ourHouse->Display();
 	// new []
 	//delete[5]  ourHouse;
 	
 	std::list<House*> listOfHouses;
 	std::list<House*>::iterator it;
 
-	House *p = new House();
+	House *p = new House(123);
 	p->id = 0;
-	listOfHouses.push_back(p);
+	listOfHouses.push_back(p);   //ein element einfügen
+	
+	//listOfHouses.insert(listOfHouses.begin(),p );
+
+	for (auto v : listOfHouses){
+		std::cout << v << "\n";
+		v->Display();
+		std::cout <<  "\n";
+}
 
 
 
+	//printf("\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n");
+
+//	test();
 	/*House* yourHouse[2];
 	yourHouse[0] = new House();
 	delete yourHouse[1];*/
@@ -78,14 +97,19 @@ int main() {
 	House** HouseArray = new House* [n];
 	for (int i = 0; i != n; ++i)
 	{
-		HouseArray[i] = new House();
+		HouseArray[i] = new House(13);
 	}
 
+	HouseArray[3]->Display();
 
+	for (int i = 0; i != n; ++i)
+	{
+		delete HouseArray[i];
+	}
+	delete[] HouseArray;
+
+	//test();
 }
 
 
-int test() {
 
-	return 444;
-}

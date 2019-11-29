@@ -50,7 +50,7 @@ House::House(size_t t_height) {
 
 //Destruktor
 House::~House() {
-	std::cout << "Destructor called";
+	std::cout << "Destructor called\n";
 	// Speicher von char* freigeben. 
 	
 	if (this->m_street){
@@ -78,7 +78,7 @@ void House::SetStreet(const char* t_street)
 			//Step3 : Speicher reservieren für Pointer
 			this->m_street = new char[len + 1];
 			
-			//Step4: Überprüfung von m_Name & Speciherung in Member
+			//Step4: Überprüfung von m_Name & Speicherung in Member
 			if (m_street != nullptr)
 			{
 				strncpy(this->m_street, t_street, len + 1);
@@ -113,11 +113,9 @@ void House::SetHeight(size_t t_height)
 void House::Display()
 {
 	std::cout << "Street....:" << (this->m_street ? this->m_street : "Street noch nicht vorhanden!") << std::endl;
-	
 	std::cout << "City....:" << ((this->m_city!="")? this->m_city : "City noch nicht vorhanden!") << std::endl;
 	
-
-	std::cout << "Width....:" << ((this->m_width >0)? this->m_width : 007) << std::endl;
-	std::cout << "Height....:" << ((this->m_height>0)? this->m_height : 007) << std::endl;
+	std::cout << "Width....:" << ((this->m_width >0)? this->m_width : 0) << std::endl;
+	std::cout << "Height....:" << ((this->m_height>0)? this->m_height : 0) << std::endl;
 
 }
